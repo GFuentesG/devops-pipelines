@@ -8,15 +8,16 @@ jobs:
   deploy:   #cada job se debe ejecutar sobre un runner
     runs-on: ubuntu-latest
     steps:
-      run: python3 -m venv
-      run: ruby main.ruby
-      rum: mkdir carpbackup
-      run: cd carpbackup
-      run: touch version.txt
-      run: ls
-      run: echo "Hacemos pull del codigo"
-      run: echo "Correr migraciones"
-      run: echo "generar binario"
-      run: echo "publicar version"
+      #uses: actions/checkout@v4  #va a clonar el repositorio
+      - run: python3 -m venv
+      - run: ruby main.ruby
+      - rum: mkdir carpbackup
+      - run: cd carpbackup
+      - run: touch version.txt
+      - run: ls
+      - run: echo "Hacemos pull del codigo"
+      - run: echo "Correr migraciones"
+      - run: echo "generar binario"
+      - run: echo "publicar version"
   #send-notification:   correran en paralelo otros jobs
   #test-code:
