@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4  #va a clonar el repositorio
       - run: python3 -m venv venv
-      - run: ruby main.ruby
+      - run: ruby main.rb
       - run: mkdir carpbackup
       - run: cd carpbackup
       - run: touch version.txt
