@@ -19,5 +19,5 @@ jobs:
       - run: echo "Correr migraciones"
       - run: echo "generar binario"
       - run: echo "publicar version"
-  send-notification:   correran en paralelo otros jobs
+  send-notification:  # correran en paralelo otros jobs
   test-code:
