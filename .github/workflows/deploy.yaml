@@ -8,7 +8,7 @@ jobs:
   deploy:   #cada job se debe ejecutar sobre un runner
     runs-on: ubuntu-latest
     steps:
-      #uses: actions/checkout@v4  #va a clonar el repositorio
+      - uses: actions/checkout@v4  #va a clonar el repositorio
       - run: python3 -m venv
       - run: ruby main.ruby
       - rum: mkdir carpbackup
