@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4  #va a clonar el repositorio
       - run: python3 -m venv
       - run: ruby main.ruby
-      - rum: mkdir carpbackup
+      - run: mkdir carpbackup
       - run: cd carpbackup
       - run: touch version.txt
       - run: ls
