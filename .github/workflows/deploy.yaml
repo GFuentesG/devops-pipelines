@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4  #va a clonar el repositorio
-      - run: python3 -m venv
+      - run: python3 -m venv venv
       - run: ruby main.ruby
       - run: mkdir carpbackup
       - run: cd carpbackup
