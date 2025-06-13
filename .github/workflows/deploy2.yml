@@ -13,3 +13,10 @@ jobs:
     steps:
       - name: Inicial
         run: echo "Iniciando deploy"
+
+  second_jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Inicial2
+        run: echo "Iniciando deploy job 2"
