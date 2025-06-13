@@ -1,7 +1,10 @@
 name: Deploy to server
 
 #evento
-on: push
+on: 
+  push:
+    branches:
+      - main
 
 jobs:
   first_jobs:
