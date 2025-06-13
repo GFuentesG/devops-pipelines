@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Inicial
-        run: echo "Iniciando deploy $PruebaVariableDeEntorno" #directamente en el step
+        run: echo "Iniciando deploy $NAME" #directamente en el step
 
   second_jobs:   #ejecutate siempre y cuando el contexto de la referencia de github sea ...
     if: ${{ github.ref == 'refs/heads/main'}}   #un solo if a nivel job o a nivel step
