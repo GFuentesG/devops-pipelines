@@ -15,6 +15,7 @@ jobs:
         run: echo "Iniciando deploy"
 
   second_jobs:
+    needs: first_jobs  #acepta lista tambien a todos los jobs necesarios
     runs-on: ubuntu-latest
 
     steps:
