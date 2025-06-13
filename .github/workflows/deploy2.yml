@@ -16,8 +16,9 @@ jobs:
 
     steps:
       - name: Working dir
-        run: echo "Iniciando deploy $NAME" #directamente en el step
-        run: ls -al
+        run: |
+          echo "Iniciando deploy $NAME" #directamente en el step
+          ls -al
 
       - name: action
         uses: actions/checkout@v4  #nombre del repo GFuentesG/repositorio @ version que queremos usar
