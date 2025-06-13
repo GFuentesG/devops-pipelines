@@ -1,4 +1,4 @@
-name: Deploy to server
+name: Deploy2 to server
 
 #evento
 on: 
@@ -10,9 +10,12 @@ jobs:
   first_jobs:
     runs-on: ubuntu-latest
 
+    env:
+      NAME: PruebaVariableDeEntorno #para que todos los steps accedan
+
     steps:
       - name: Inicial
-        run: echo "Iniciando deploy"
+        run: echo "Iniciando deploy $PruebaVariableDeEntorno" #directamente en el step
 
   second_jobs:   #ejecutate siempre y cuando el contexto de la referencia de github sea ...
     if: ${{ github.ref == 'refs/heads/main'}}   #un solo if a nivel job o a nivel step
