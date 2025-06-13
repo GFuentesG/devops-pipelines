@@ -15,10 +15,12 @@ jobs:
       NAME: PruebaVariableDeEntorno #para que todos los steps accedan
 
     steps:
-      - name: Working dir
-        run: |
+      - run: | 
           echo "Iniciando deploy $NAME" #directamente en el step
-          ls -al
+          echo "Prueba or" 
+
+      - name: Working dir
+        run: ls -al
 
       - name: action
         uses: actions/checkout@v4  #nombre del repo GFuentesG/repositorio @ version que queremos usar
