@@ -8,14 +8,22 @@ on:
 
 jobs:
   first_jobs:
+    name: nombreDelJob   #se vera representado en github action en vez de first_jobs
     runs-on: ubuntu-latest
 
     env:
       NAME: PruebaVariableDeEntorno #para que todos los steps accedan
 
     steps:
-      - name: Inicial
+      - name: Working dir
         run: echo "Iniciando deploy $NAME" #directamente en el step
+        run: ls -al
+
+      - name: action
+        uses: actions/checkout@v4  #nombre del repo GFuentesG/repositorio @ version que queremos usar
+
+      - name: Working dir after action
+        run: ls -al
 
   second_jobs:   #ejecutate siempre y cuando el contexto de la referencia de github sea ...
     if: ${{ github.ref == 'refs/heads/main'}}   #un solo if a nivel job o a nivel step
