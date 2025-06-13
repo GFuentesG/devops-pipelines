@@ -1,0 +1,12 @@
+name: Deploy to server
+
+#evento
+on: push
+
+jobs:
+  first_jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Inicial
+        run: echo "Iniciando deploy"
