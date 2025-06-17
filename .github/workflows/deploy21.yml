@@ -1,0 +1,28 @@
+name: Deploy21 to server
+
+#evento
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  first_jobs:
+    name: nombreDelJob   #se vera representado en github action en vez de first_jobs
+    runs-on: ubuntu-latest
+
+    env:
+      NAME: PruebaVariableDeEntorno #para que todos los steps accedan
+
+    steps:
+      - name: Working dir
+        shell: bash
+        run: echo $GITHUB_OUTPUT
+
+  second_jobs:   
+    needs: first_jobs  #acepta lista tambien a todos los jobs necesarios
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Inicial21
+        run: echo "Iniciando deploy job 21 ${{ github.ref}}"

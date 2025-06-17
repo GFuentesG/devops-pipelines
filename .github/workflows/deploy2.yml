@@ -15,18 +15,23 @@ jobs:
       NAME: PruebaVariableDeEntorno #para que todos los steps accedan
 
     steps:
-      - run: | 
-          echo "Iniciando deploy $NAME" #directamente en el step
-          echo "Prueba or" 
-
       - name: Working dir
+        shell: bash
         run: ls -al
 
       - name: action
         uses: actions/checkout@v4  #nombre del repo GFuentesG/repositorio @ version que queremos usar
+                                   #osiciona en el directorio que estamos
+                                   #tres partes
+        with:                      #parametros para la accion
+          hola: 12                 #nombre y valor
 
       - name: Working dir after action
         run: ls -al
+
+      - run: | 
+          echo "Iniciando deploy $NAME" #directamente en el step
+          echo "Prueba or" 
 
   second_jobs:   #ejecutate siempre y cuando el contexto de la referencia de github sea ...
     if: ${{ github.ref == 'refs/heads/main'}}   #un solo if a nivel job o a nivel step
