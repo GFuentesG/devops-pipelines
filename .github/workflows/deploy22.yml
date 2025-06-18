@@ -21,3 +21,15 @@ jobs:
         with:   #el artefacto necesita que se le pase unos parametros
           name: archivo-test
           path: test.log   #o la ruta de la carpeta y lo subira comprimido y lo descomprime para darnolos
+
+  second_jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar artefacto
+        uses: actions/donwload-artefact@v4
+        with:
+          name: archivo-test
+
+      - name: Car file
+        run: cat test.log
