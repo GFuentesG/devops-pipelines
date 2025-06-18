@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Descargar artefacto
-        uses: actions/donwload-artefact@v4
+        uses: actions/donwload-artifact@v4
         with:
           name: archivo-test
 
