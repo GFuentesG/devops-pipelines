@@ -14,6 +14,9 @@ jobs:
     env:
       NAME: PruebaVariableDeEntorno #para que todos los steps accedan
 
+    outputs:
+      salida: Hola, esto es una salida del job inicial #si se puede hacer rerencia desde otros jobs
+
     steps:
       - name: Primer step referencial
         shell: bash
@@ -30,6 +33,9 @@ jobs:
     needs: first_jobs  #acepta lista tambien a todos los jobs necesarios
     runs-on: ubuntu-latest
 
+    env:
+      SALIDA: ${{needs.first_jobs.outputs.salida}}  #usar un contexto needs y luego una salida de jobs context 
+
     steps:
       - name: Inicial21
-        run: echo "Iniciando deploy job 21 ${{ github.ref}}"
+        run: echo "$SALIDA"
