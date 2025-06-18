@@ -15,9 +15,16 @@ jobs:
       NAME: PruebaVariableDeEntorno #para que todos los steps accedan
 
     steps:
-      - name: Working dir
+      - name: Primer step referencial
         shell: bash
         run: echo $GITHUB_OUTPUT
+      
+      - name: Working dir
+        id: steps_1   #un id para hacer referencia en otro step
+        run: echo "my_variable=Hola segundo paso del first_jobs" >> $GITHUB_OUTPUT #concateno la variable de entorno
+        
+      - name: Obtener mensaje
+        run: echo "${{ steps.steps_1.outputs.my_variable}}" #usando steps contex
 
   second_jobs:   
     needs: first_jobs  #acepta lista tambien a todos los jobs necesarios
