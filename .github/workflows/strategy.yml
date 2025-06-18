@@ -1,0 +1,18 @@
+name: Strategy
+
+on: push
+
+jobs:
+  first_jobs:
+    runs-on: ubuntu-latest
+
+    strtegy:
+      matrix:
+        message: ["hola", "como", "estas"]
+
+    steps:
+      - name: Print mensaje
+        run: echo "${{ matrix.message}}" # usar el contexto matrix, y hacemos referencia a los mensajes
+        #va a ejecutar el job 3 veces
+
+        
