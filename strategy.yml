@@ -4,11 +4,13 @@ on: push
 
 jobs:
   first_jobs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #"${{ matrix.runner}}"
 
     strategy:
       matrix:
         message: ["hola", "como", "estas"]
+        message2: [1, 2]  #hace una conbinacion de hola1 hola2 como1 como2 estas1 estas2
+        #runner: ["ubuntu-latest", "windows-latest"]
 
     steps:
       - name: Print mensaje
